@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ERROR</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script th:src="@{'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'}"></script>
+    <script th:src="@{'https://code.jquery.com/jquery-3.6.0.min.js'}"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}" >
+
+</head>
+<body>
+
+<!-- message -->
+<main  class="container " style="display: block; text-align: center;" th:style="'display: block; text-align: center'">
+    <h1 th:text="${message}"></h1>
+    <a class="button" th:href="@{~/}" >Вернуться на главную страницу</a>
+</main>
+
+</body>
+</html>

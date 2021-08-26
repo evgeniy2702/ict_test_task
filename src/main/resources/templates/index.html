@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather</title>
+    <link src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"
+          th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js}" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}" >
+</head>
+<body>
+
+<h3>
+    Погода на дату :  <span th:text="${date}"> 26.08.2021</span>
+</h3>
+<form th:action="@{~/city/weather}"  th:method="post" >
+
+    <label id="enter" >Введите город на англ языке : </label>
+    <input th:name="enter" type="text"/>
+
+
+    <!--<select th:form="linkForm" th:name="valcode" >-->
+        <!--<option selected="selected" >Выберите валюту !</option>-->
+        <!--<option  th:each="valcode : ${cc}" th:text="${valcode}" ></option>-->
+    <!--</select>-->
+
+
+    <input type="submit" value="Отправить" class="blue-button" />
+</form>
+
+<hr/>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-striped" border="1" >
+                        <tbody>
+                        <tr>
+                            <th id="date">Дата</th>
+                            <th id="city">Наименование города на англ. языке</th>
+                            <th id="lon">Широта, град</th>
+                            <th id="lat">Долшота, град</th>
+                            <th id="main">Обозначение</th>
+                            <th id="desc">Описание</th>
+                            <th id="icon">Картинка состояния погоды </th>
+                        </tr>
+
+                        <tr style="text-align: center;">
+                            <td th:text="${date}"> </td>
+                            <td th:text="${name}"> </td>
+                            <td th:text="${lon}"> </td>
+                            <td th:text="${lat}"> </td>
+                            <td th:text="${main}"> </td>
+                            <td th:text="${desc}"> </td>
+                            <td><img th:src="${icon}" alt="Weather_icon_link"/> </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
